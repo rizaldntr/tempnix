@@ -1,5 +1,5 @@
 {hmUsers, ...}: {
-  home-manager.users = {inherit (hmUsers) mrd;};
+  home-manager.users = {inherit (hmUsers) nixos;};
 
   users.users.mrd = {
     password = "mrd";
