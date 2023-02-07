@@ -17,5 +17,12 @@
 
   networking.networkmanager.enable = true;
 
-  fileSystems."/" = {device = "/dev/disk/by-label/nixos";};
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/nixos";
+    };
+    "/boot" = {
+      device = "/dev/disk/by-label/boot";
+    };
+  };
 }
