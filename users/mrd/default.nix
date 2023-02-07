@@ -1,8 +1,8 @@
 {hmUsers, ...}: {
-  home-manager.users = {inherit (hmUsers) nixos;};
+  home-manager.users = {inherit (hmUsers) mrd;};
 
-  users.users.nixos = {
-    password = "nixos";
+  users.users.mrd = {
+    password = "mrd";
     description = "default";
     isNormalUser = true;
     extraGroups = ["wheel"];

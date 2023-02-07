@@ -23,26 +23,6 @@
     "darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-darwin-stable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1672753581,
-        "narHash": "sha256-EIi2tqHoje5cE9WqH23ZghW28NOOWSUM7tcxKE1U9KI=",
-        "owner": "LnL7",
-        "repo": "nix-darwin",
-        "rev": "3db1d870b04b13411f56ab1a50cd32b001f56433",
-        "type": "github"
-      },
-      "original": {
-        "owner": "LnL7",
-        "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
-    "darwin_2": {
-      "inputs": {
-        "nixpkgs": [
           "digga",
           "nixpkgs"
         ]
@@ -65,16 +45,17 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
-          "nixos"
+          "digga",
+          "nixpkgs"
         ],
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1672327199,
-        "narHash": "sha256-pFlngSHXKBhAmbaKZ4FYtu57LLunG+vWdL7a5vw1RvQ=",
+        "lastModified": 1674127017,
+        "narHash": "sha256-QO1xF7stu5ZMDLbHN30LFolMAwY6TVlzYvQoUs1RD68=",
         "owner": "serokell",
         "repo": "deploy-rs",
-        "rev": "a5619f5660a00f58c2b7c16d89058e92327ac9b8",
+        "rev": "8c9ea9605eed20528bf60fae35a2b613b901fd77",
         "type": "github"
       },
       "original": {
@@ -107,10 +88,8 @@
     },
     "digga": {
       "inputs": {
-        "darwin": "darwin_2",
-        "deploy": [
-          "deploy"
-        ],
+        "darwin": "darwin",
+        "deploy": "deploy",
         "devshell": "devshell",
         "flake-compat": "flake-compat_2",
         "flake-utils-plus": "flake-utils-plus",
@@ -349,22 +328,6 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-darwin-stable": {
-      "locked": {
-        "lastModified": 1672907623,
-        "narHash": "sha256-hI1wQVjYDdnEX0DxFbxNqUgkg/L3BAUb6Ocy5DJS0Yw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "c013ff8cc1e5186fd459f95e757d572700190fec",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-22.11-darwin",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1667629849,
@@ -420,8 +383,6 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
-        "darwin": "darwin",
-        "deploy": "deploy",
         "digga": "digga",
         "flake-compat": "flake-compat_3",
         "home": "home",
@@ -429,7 +390,6 @@
         "nixos": "nixos",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-darwin-stable": "nixpkgs-darwin-stable",
         "nur": "nur",
         "nvfetcher": "nvfetcher"
       }
