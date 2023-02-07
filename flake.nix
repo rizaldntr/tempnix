@@ -124,7 +124,7 @@
           ];
         };
 
-        imports = [(digga.lib.importHosts ./hosts/nixos)];
+        imports = [(digga.lib.importHosts ./hosts)];
         hosts = {
           # set host-specific properties here
           NixOS = {};
@@ -137,36 +137,6 @@
             };
           suites = with profiles; rec {
             base = [core.nixos users.nixos users.root];
-          };
-        };
-      };
-
-      darwin = {
-        hostDefaults = {
-          system = "x86_64-darwin";
-          channelName = "nixpkgs-darwin-stable";
-          imports = [(digga.lib.importExportableModules ./modules)];
-          modules = [
-            {lib.our = self.lib;}
-            digga.darwinModules.nixConfig
-            home.darwinModules.home-manager
-            agenix.nixosModules.age
-          ];
-        };
-
-        imports = [(digga.lib.importHosts ./hosts/darwin)];
-        hosts = {
-          # set host-specific properties here
-          Mac = {};
-        };
-        importables = rec {
-          profiles =
-            digga.lib.rakeLeaves ./profiles
-            // {
-              users = digga.lib.rakeLeaves ./users;
-            };
-          suites = with profiles; rec {
-            base = [core.darwin users.darwin];
           };
         };
       };
