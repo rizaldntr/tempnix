@@ -124,7 +124,7 @@
           };
         };
         users = {
-          nixos = {suites, ...}: {
+          mrd = {suites, ...}: {
             imports = suites.base;
 
             home.stateVersion = "22.11";

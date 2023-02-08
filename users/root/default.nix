@@ -1,3 +1,3 @@
 {...}: {
-  users.users.root.password = "";
+  users.users.root.password = "root";
 }

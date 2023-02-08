@@ -15,6 +15,7 @@
   services.xserver.videoDrivers = ["nvidia"];
   hardware.opengl.enable = true;
 
+  networking.wireless.enable = false;
   networking.networkmanager.enable = true;
 
   fileSystems = {
