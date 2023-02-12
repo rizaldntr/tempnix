@@ -6,6 +6,9 @@
       pull.rebase = false;
     };
 
+    userName = "rizaldntr";
+    userEmail = "rizaldntr@gmail.com";
+
     aliases = {
       a = "add -p";
       co = "checkout";

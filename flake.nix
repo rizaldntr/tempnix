@@ -14,12 +14,6 @@
   };
 
   inputs = {
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
-
-    # Track channels with commits tested and built by hydra
     nixos.url = "github:nixos/nixpkgs/nixos-22.11";
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -37,7 +31,11 @@
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixos";
 
-    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixos";
+
+    hyprland.url = github:hyprwm/Hyprland;
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -46,9 +44,9 @@
     nixos,
     home,
     nixos-hardware,
-    nur,
     agenix,
     nvfetcher,
+    hyprland,
     nixpkgs,
     ...
   } @ inputs:
@@ -66,19 +64,9 @@
         latest = {};
       };
 
-      lib = import ./lib {lib = digga.lib // nixos.lib;};
-
       sharedOverlays = [
-        (final: prev: {
-          __dontExport = true;
-          lib = prev.lib.extend (lfinal: lprev: {
-            our = self.lib;
-          });
-        })
-
-        nur.overlay
-        agenix.overlay
-        nvfetcher.overlay
+        agenix.overlays.default
+        nvfetcher.overlays.default
 
         (import ./pkgs)
       ];
@@ -89,7 +77,6 @@
           channelName = "nixos";
           imports = [(digga.lib.importExportableModules ./modules)];
           modules = [
-            {lib.our = self.lib;}
             digga.nixosModules.bootstrapIso
             digga.nixosModules.nixConfig
             home.nixosModules.home-manager
@@ -99,33 +86,35 @@
 
         imports = [(digga.lib.importHosts ./hosts)];
         hosts = {
-          # set host-specific properties here
           zeus = {};
+          gada = {};
         };
         importables = rec {
-          profiles =
-            digga.lib.rakeLeaves ./profiles
-            // {
-              users = digga.lib.rakeLeaves ./users;
-            };
+          profiles = digga.lib.rakeLeaves ./profiles // {
+            users = digga.lib.rakeLeaves ./users;
+          };
           suites = with profiles; rec {
-            base = [core.nixos users.mrd users.root graphical.plasma];
+            base = [ core vars audio users.mrd graphical.greetd ];
           };
         };
       };
 
       home = {
         imports = [(digga.lib.importExportableModules ./users/modules)];
-        modules = [];
+        modules = [ inputs.hyprland.homeManagerModules.default ];
         importables = rec {
           profiles = digga.lib.rakeLeaves ./users/profiles;
-          suites = with profiles; rec {
-            base = [direnv git];
+          suites = with profiles; {
+            core    = with core; [ fonts ];
+            apps    = with apps; [ vscode firefox ];
+            shell   = with shell; [ direnv git bottom ];
+            wayland = with wayland; [ hypr waybar ];
+            gada    = with suites; [ core apps shell wayland ];
           };
         };
         users = {
           mrd = {suites, ...}: {
-            imports = suites.base;
+            imports = suites.gada;
 
             home.stateVersion = "22.11";
           };
