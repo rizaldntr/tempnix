@@ -20,7 +20,7 @@ by Miguel Avila
   }
 }
 /* background image for newtab, home, blank, privatebrowsing */
-@-moz-document url(about:home), url(about:newtab), url(about:blank) {
+@-moz-document url(about:home), url(about:newtab), url(about:blank), domain("google.com") {
   body::before {
     content: "" !important;
     z-index: -1 !important;
@@ -28,7 +28,7 @@ by Miguel Avila
     top: 0 !important;
     left: 0 !important;
     background-image: none !important;
-    background-color: var(--toolbar-bgcolor) !important;
+    background-color: var(--sfwindow) !important;
     width: 100vw !important;
     height: 100vh !important;
     opacity: 0;
@@ -45,6 +45,13 @@ by Miguel Avila
     100% {
       opacity: 1;
     }
+  }
+}
+
+@-moz-document url(about:home), url(about:newtab), url(about:blank), domain("google.com") {
+  body {
+    background-image: none !important;
+    background-color: var(--sfwindow) !important;
   }
 }
 ''

@@ -11,6 +11,8 @@
       unzip
       wget
       zip
+      docker
+      docker-compose
     ];
 
     shellAliases = let

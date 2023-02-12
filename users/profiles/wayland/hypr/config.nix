@@ -66,7 +66,7 @@ master {
 }
 gestures {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
-    workspace_swipe = off
+    workspace_swipe = on
 }
 # Example per-device config
 # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
