@@ -11,8 +11,8 @@ in
       size = 12;
     };
     theme = {
-      name    = "${config.colorscheme.slug}";
-      package = gtkThemeFromScheme { scheme = config.colorscheme; };
+      name    = "Decayce";
+      package = pkgs.decay-gtk;
     };
     iconTheme = {
       name    = "Papirus-Dark";

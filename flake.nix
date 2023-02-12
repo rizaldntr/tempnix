@@ -46,6 +46,7 @@
     nixos-hardware,
     agenix,
     nvfetcher,
+    nur,
     hyprland,
     nixpkgs,
     nix-colors,
@@ -66,6 +67,7 @@
       };
 
       sharedOverlays = [
+        nur.overlay
         agenix.overlays.default
         nvfetcher.overlays.default
         hyprland.overlays.default

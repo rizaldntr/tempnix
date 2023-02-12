@@ -1,0 +1,39 @@
+{
+    "decay-gtk": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "decay-gtk",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "19a60e6f83f5c8193ce3b44f693d8cd8d17eef53",
+            "sha256": "sha256-i6crTKc0NcS/u9edjZjFJItxcxvW5BMK0cvPuBvP/Aw=",
+            "type": "git",
+            "url": "https://github.com/decaycs/decay-gtk"
+        },
+        "version": "19a60e6f83f5c8193ce3b44f693d8cd8d17eef53"
+    },
+    "manix": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "manix",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mlvzk",
+            "repo": "manix",
+            "rev": "v0.6.3",
+            "sha256": "sha256-GqPuYscLhkR5E2HnSFV4R48hCWvtM3C++3zlJhiK/aw=",
+            "type": "github"
+        },
+        "version": "v0.6.3"
+    }
+}

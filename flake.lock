@@ -498,6 +498,20 @@
         "type": "indirect"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1676185168,
+        "narHash": "sha256-tTwuFUfT9jaon7rGoYaEgsYq17WCo35zukt15w7FsyQ=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "e669d02efdda27481eaeced3b17e9b2179985a37",
+        "type": "github"
+      },
+      "original": {
+        "id": "nur",
+        "type": "indirect"
+      }
+    },
     "nvfetcher": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -532,6 +546,7 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "nur": "nur",
         "nvfetcher": "nvfetcher"
       }
     },
