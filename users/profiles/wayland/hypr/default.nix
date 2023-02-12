@@ -4,6 +4,7 @@ let
 in {
   wayland.windowManager.hyprland = {
     enable = true;
+    disableAutoreload = true;
     systemdIntegration = true;
     extraConfig = import ./config.nix {
       inherit enable_animations;

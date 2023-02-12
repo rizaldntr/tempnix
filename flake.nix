@@ -35,7 +35,7 @@
     nixos-generators.inputs.nixpkgs.follows = "nixos";
 
     hyprland.url = github:hyprwm/Hyprland;
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = {
@@ -48,6 +48,7 @@
     nvfetcher,
     hyprland,
     nixpkgs,
+    nix-colors,
     ...
   } @ inputs:
     digga.lib.mkFlake
@@ -67,6 +68,7 @@
       sharedOverlays = [
         agenix.overlays.default
         nvfetcher.overlays.default
+        hyprland.overlays.default
 
         (import ./pkgs)
       ];
@@ -101,14 +103,18 @@
 
       home = {
         imports = [(digga.lib.importExportableModules ./users/modules)];
-        modules = [ inputs.hyprland.homeManagerModules.default ];
+        modules = [ 
+          hyprland.homeManagerModules.default
+          nix-colors.homeManagerModule
+        ];
         importables = rec {
           profiles = digga.lib.rakeLeaves ./users/profiles;
-          suites = with profiles; {
-            core    = with core; [ fonts ];
-            apps    = with apps; [ vscode firefox ];
-            shell   = with shell; [ direnv git bottom ];
-            wayland = with wayland; [ hypr waybar ];
+          suites = with builtins; let explodeAttrs = set: map (a: getAttr a set) (attrNames set); in
+          with profiles; {
+            core    = (explodeAttrs core);
+            apps    = (explodeAttrs apps);
+            shell   = (explodeAttrs shell);
+            wayland = (explodeAttrs wayland);
             gada    = with suites; [ core apps shell wayland ];
           };
         };
