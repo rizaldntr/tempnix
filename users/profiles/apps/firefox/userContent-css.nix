@@ -20,7 +20,7 @@ by Miguel Avila
   }
 }
 /* background image for newtab, home, blank, privatebrowsing */
-@-moz-document url(about:home), url(about:newtab), url(about:blank), domain("google.com") {
+@-moz-document url(about:home), url(about:newtab), url(about:blank) {
   body::before {
     content: "" !important;
     z-index: -1 !important;
@@ -48,7 +48,7 @@ by Miguel Avila
   }
 }
 
-@-moz-document url(about:home), url(about:newtab), url(about:blank), domain("google.com") {
+@-moz-document url(about:home), url(about:newtab), url(about:blank), domain("www.google.com") {
   body {
     background-image: none !important;
     background-color: var(--sfwindow) !important;

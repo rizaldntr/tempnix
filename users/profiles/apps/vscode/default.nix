@@ -19,7 +19,6 @@
     };
     extensions = with pkgs.vscode-extensions; [
       esbenp.prettier-vscode
-      github.copilot
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "decay";

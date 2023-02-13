@@ -11,8 +11,6 @@ in {
     };
   };
 
-  programs.kitty.enable = true;
-
   home.packages = with pkgs; [
     wf-recorder
     wl-clipboard
