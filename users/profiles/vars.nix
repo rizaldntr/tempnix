@@ -1,5 +1,3 @@
-{...}:
-
-{
+{...}: {
   imports = [../../profiles/vars.nix];
 }

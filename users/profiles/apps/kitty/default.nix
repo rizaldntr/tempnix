@@ -1,9 +1,11 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   programs.kitty = {
     enable = true;
-    extraConfig = import ./config.nix { inherit (config) colors; } ;
+    extraConfig = import ./config.nix {inherit (config) colors;};
     settings = {
       window_padding_width = 20;
       confirm_os_window_close = 0;

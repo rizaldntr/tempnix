@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   systemd.services.NetworkManager-wait-online.enable = false;
   boot.cleanTmpDir = true;
 
@@ -13,14 +16,15 @@
       zip
       docker
       docker-compose
+      alejandra
     ];
 
     shellAliases = let
       ifSudo = lib.mkIf config.security.sudo.enable;
     in {
       # nix
-      nrb  = ifSudo "sudo nixos-rebuild";
-      nso  = ifSudo "sudo nix-store --optimise";
+      nrb = ifSudo "sudo nixos-rebuild";
+      nso = ifSudo "sudo nix-store --optimise";
       ncgd = ifSudo "sudo nix-collect-garbage -d";
 
       # systemd
@@ -46,7 +50,7 @@
     optimise.automatic = true;
     settings = {
       sandbox = true;
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = ["root" "@wheel"];
       auto-optimise-store = true;
       min-free = 536870912;
       keep-outputs = true;

@@ -1,4 +1,8 @@
-{hmUsers, pkgs, ...}: {
+{
+  hmUsers,
+  pkgs,
+  ...
+}: {
   home-manager.users = {inherit (hmUsers) mrd;};
 
   users.defaultUserShell = pkgs.fish;

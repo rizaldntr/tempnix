@@ -1,5 +1,4 @@
-{pkgs, ...}: 
-let
+{pkgs, ...}: let
   enable_animations = "yes";
 in {
   wayland.windowManager.hyprland = {

@@ -1,8 +1,10 @@
-{ pkgs, config, ... }:
-
-let
-  waybar_config = import ./config.nix { inherit pkgs; };
-  waybar_style = import ./style.nix { inherit (config) fontProfiles colors; };
+{
+  pkgs,
+  config,
+  ...
+}: let
+  waybar_config = import ./config.nix {inherit pkgs;};
+  waybar_style = import ./style.nix {inherit (config) fontProfiles colors;};
 in {
   programs.waybar = {
     enable = true;

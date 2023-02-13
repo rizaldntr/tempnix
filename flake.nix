@@ -94,31 +94,35 @@
           gada = {};
         };
         importables = rec {
-          profiles = digga.lib.rakeLeaves ./profiles // {
-            users = digga.lib.rakeLeaves ./users;
-          };
+          profiles =
+            digga.lib.rakeLeaves ./profiles
+            // {
+              users = digga.lib.rakeLeaves ./users;
+            };
           suites = with profiles; rec {
-            base = [ core vars audio users.mrd graphical.greetd ];
+            base = [core vars audio users.mrd graphical.greetd];
           };
         };
       };
 
       home = {
         imports = [(digga.lib.importExportableModules ./users/modules)];
-        modules = [ 
+        modules = [
           hyprland.homeManagerModules.default
           nix-colors.homeManagerModule
         ];
         importables = rec {
           profiles = digga.lib.rakeLeaves ./users/profiles;
-          suites = with builtins; let explodeAttrs = set: map (a: getAttr a set) (attrNames set); in
-          with profiles; {
-            core    = (explodeAttrs core);
-            apps    = (explodeAttrs apps);
-            shell   = (explodeAttrs shell);
-            wayland = (explodeAttrs wayland);
-            gada    = with suites; [ core apps shell wayland ];
-          };
+          suites = with builtins; let
+            explodeAttrs = set: map (a: getAttr a set) (attrNames set);
+          in
+            with profiles; {
+              core = explodeAttrs core;
+              apps = explodeAttrs apps;
+              shell = explodeAttrs shell;
+              wayland = explodeAttrs wayland;
+              gada = with suites; [core apps shell wayland];
+            };
         };
         users = {
           mrd = {suites, ...}: {

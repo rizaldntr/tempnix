@@ -1,9 +1,11 @@
-{ config, pkgs, inputs, ... }:
-
-let
-  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) gtkThemeFromScheme;
-in
- {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
+  inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
+in {
   gtk = {
     enable = true;
     font = {
@@ -11,14 +13,14 @@ in
       size = 12;
     };
     theme = {
-      name    = "Decayce";
+      name = "Decayce";
       package = pkgs.decay-gtk;
     };
     iconTheme = {
-      name    = "Papirus-Dark";
+      name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
   };
 
-  home.packages = with pkgs; [ dconf ];
+  home.packages = with pkgs; [dconf];
 }

@@ -1,6 +1,4 @@
-{ pkgs }:
-
-let
+{pkgs}: let
   pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
 in {
   mainBar = {
