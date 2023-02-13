@@ -17,5 +17,21 @@
         };
       }
     ];
+    shellAliases = {
+      # git
+      g ="git";
+      gst = "git status";
+      gd = "git diff";
+      gdc = "git diff --cached";
+      gl = "git pull";
+      gup = "git pull --rebase";
+      gp = "git push";
+      glo = "git log --oneline";
+
+      #  nix
+      nrb = "sudo nixos-rebuild";
+      nso = "sudo nix-store --optimise";
+      ncgd = "sudo nix-collect-garbage -d";
+    };
   };
 }
