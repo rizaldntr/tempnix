@@ -8,7 +8,6 @@
       set fish_greeting
     '';
     plugins = [
-      { name = "grc"; src = pkgs.fishPlugins.grc.src; }
       { 
         name = "z";  
         src = pkgs.fetchFromGitHub {
