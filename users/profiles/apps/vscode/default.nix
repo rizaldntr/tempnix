@@ -7,7 +7,7 @@
       "workbench.colorTheme" = "Decayce Theme";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
-      "editor.fontFamily" = "monospace";
+      "editor.fontFamily" = "${config.fontProfiles.monospace.family}";
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
       "editor.fontSize" = 16;

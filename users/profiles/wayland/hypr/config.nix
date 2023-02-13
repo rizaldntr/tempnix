@@ -78,7 +78,7 @@ windowrule = float, Rofi
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 $mainMod = SUPER
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-bind = $mainMod, RETURN, exec, footclient
+bind = $mainMod, RETURN, exec, kitty
 bind = $mainMod SHIFT, RETURN, exec, rofi -show drun
 bind = $mainMod, W, killactive
 bind = $mainMod SHIFT, Q, exit

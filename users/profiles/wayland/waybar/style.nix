@@ -76,7 +76,7 @@ window#waybar {
   font-family: ${monospace};
   font-size: 13px;
   border-top-left-radius: 4px;
-  color: ${base.foreground}
+  color: ${base.foreground};
   background-color: ${base.black};
   border-top-right-radius: 4px;
 }
@@ -85,7 +85,7 @@ window#waybar {
   border-bottom-right-radius: 4px;
   padding: 4px 0px;
   margin-bottom: 4px;
-  color: ${base.foreground}
+  color: ${base.foreground};
   background-color: ${base.black};
   font-family: ${monospace};
   font-size: 13px;
@@ -98,7 +98,7 @@ window#waybar {
   font-size: 20px;
   margin: 0px 6px 4px;
   border-radius: 4px;
-  color: ${base.red}
+  color: ${base.red};
   background-color: ${base.black};
 }
 ''

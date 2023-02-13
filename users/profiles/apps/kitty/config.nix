@@ -1,10 +1,10 @@
 {colors}:
-with colors;
+with colors.base;
 ''
 # Eye Friendly Colors
 # Created by https://github.com/decaycs
 # Special
-background #000000
+background ${backgroundDarker}
 foreground ${foreground}
 # Black
 color0 ${black}
