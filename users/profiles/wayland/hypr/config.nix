@@ -1,4 +1,8 @@
-{enable_animations}: ''
+{
+  enable_animations,
+  colors,
+}:
+with colors.raw; ''
   # This is an example Hyprland config file.
   #
   # Refer to the wiki for more information.
@@ -11,6 +15,7 @@
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
   # Execute your favorite apps at launch
   # exec-once = waybar & hyprpaper & firefox
+  exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
   exec-once = swaybg --mode fill --image ~/.config/.wallpaper.jpg
   exec-once = waybar
   # Source a file (multi-file configs)
@@ -33,6 +38,10 @@
       gaps_in = 8
       gaps_out = 14
       border_size = 2
+
+      col.active_border = rgb(${blue})
+      col.inactive_border = rgb(${dimblack})
+
       layout = dwindle
   }
   decoration {
@@ -40,7 +49,7 @@
       rounding = 6
       blur = no
       drop_shadow = yes
-      shadow_range = 4
+      shadow_range = 15
       shadow_render_power = 3
       col.shadow = rgba(1a1a1aee)
   }

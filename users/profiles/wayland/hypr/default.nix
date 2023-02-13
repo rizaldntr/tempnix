@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   enable_animations = "yes";
 in {
   wayland.windowManager.hyprland = {
@@ -7,6 +11,7 @@ in {
     systemdIntegration = true;
     extraConfig = import ./config.nix {
       inherit enable_animations;
+      inherit (config) colors;
     };
   };
 
@@ -17,6 +22,8 @@ in {
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
     swaybg
+    slurp
+    grim
     pavucontrol
   ];
 

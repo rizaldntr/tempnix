@@ -19,7 +19,7 @@
     ];
     shellAliases = {
       # git
-      g ="git";
+      g = "git";
       gst = "git status";
       gd = "git diff";
       gdc = "git diff --cached";

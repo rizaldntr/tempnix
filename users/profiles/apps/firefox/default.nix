@@ -10,6 +10,7 @@
       enhanced-github
       enhancer-for-youtube
       refined-github
+      browserpass
     ];
 
     profiles.mrd = {
