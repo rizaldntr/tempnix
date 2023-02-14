@@ -6,7 +6,7 @@ in {
     position = "left";
     width = 40;
     modules-left = ["custom/launcher" "wlr/workspaces"];
-    modules-right = ["keyboard-state" "custom/settings" "pulseaudio" "network" "custom/hour" "custom/mins" "custom/powermenu"];
+    modules-right = ["keyboard-state" "custom/settings" "pulseaudio" "network" "battery" "custom/hour" "custom/mins" "custom/powermenu"];
     "custom/launcher" = {
       format = "";
       on-click = "rofi -show drun";
@@ -52,6 +52,14 @@ in {
       format-wifi = "";
       format-disconnected = "睊";
       tooltip = false;
+    };
+    battery = {
+      bat = "BAT0";
+      interval = 10;
+      format-icons = [ "" "" "" "" "" "" "" "" "" "" ];
+      format = "{icon}";
+      format-charging = "";
+      onclick = "";
     };
     "custom/hour" = {
       interval = 60;

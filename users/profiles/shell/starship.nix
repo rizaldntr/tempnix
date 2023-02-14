@@ -3,8 +3,6 @@
     enable = true;
     settings = {
       scan_timeout = 10;
-      add_newline = false;
-      line_break.disabled = true;
       cmd_duration.disabled = true;
 
       format = let
