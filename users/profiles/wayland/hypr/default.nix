@@ -15,6 +15,10 @@ in {
     };
   };
 
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+  };
+
   home.packages = with pkgs; [
     wf-recorder
     wl-clipboard

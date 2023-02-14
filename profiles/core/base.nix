@@ -7,6 +7,8 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   boot.cleanTmpDir = true;
 
+  services.dbus.packages = [ pkgs.gcr ];
+
   environment = {
     defaultPackages = with pkgs; [
       file
@@ -14,7 +16,6 @@
       unzip
       wget
       zip
-      docker
       docker-compose
       alejandra
     ];
@@ -42,6 +43,11 @@
   networking = {
     useDHCP = false;
     networkmanager.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
   };
 
   nix = {
@@ -72,5 +78,6 @@
     };
   };
 
+  virtualisation.docker.enable = true;
   system.stateVersion = lib.mkDefault "22.11";
 }

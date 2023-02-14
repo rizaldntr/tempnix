@@ -1,6 +1,7 @@
 {
   hmUsers,
   pkgs,
+  config,
   ...
 }: {
   home-manager.users = {inherit (hmUsers) mrd;};
@@ -11,6 +12,7 @@
     password = "mrd";
     description = "default";
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel"] 
+    ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
   };
 }
