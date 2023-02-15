@@ -17,11 +17,17 @@
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
       "editor.inlineSuggest.enabled" = true;
-      "[python]"."editor.tabSize" = 4;
+      "python.formatting.provider" = "black";
+      "[python]" = {
+        "editor.tabSize" = 4;
+        "editor.formatOnSave" = true;
+      };
     };
     extensions = with pkgs.vscode-extensions;
       [
         esbenp.prettier-vscode
+        ms-python.python
+        ms-python.vscode-pylance
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {

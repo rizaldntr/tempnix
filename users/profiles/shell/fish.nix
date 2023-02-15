@@ -32,6 +32,9 @@
       nrb = "sudo nixos-rebuild";
       nso = "sudo nix-store --optimise";
       ncgd = "sudo nix-collect-garbage -d";
+
+      # lazy
+      ld = "lazydocker";
     };
   };
 }

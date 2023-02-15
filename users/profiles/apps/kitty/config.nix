@@ -35,4 +35,18 @@ with colors.base; ''
   # Selection highlight
   selection_foreground ${foreground}
   selection_background ${dimblack}
+
+  # Tab
+  tab_bar_edge top
+  tab_bar_style powerline
+  tab_powerline_style slanted
+  tab_title_template "{fmt.fg.red}{bell_symbol}{activity_symbol}{fmt.fg.tab}{title}"
+
+  active_tab_foreground   ${black}
+  active_tab_background   ${blue}
+  active_tab_font_style   bold-italic
+  inactive_tab_foreground ${white}
+  inactive_tab_background ${background}
+  tab_bar_background ${backgroundLighter}
+  tab_bar_margin_color ${blue}
 ''

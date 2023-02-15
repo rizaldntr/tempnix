@@ -8,6 +8,7 @@ channels: final: prev: {
     starship
     deploy-rs
     hyprland
+    vscode
     ;
 
   haskellPackages =

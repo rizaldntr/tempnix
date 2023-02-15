@@ -56,7 +56,7 @@ in {
     battery = {
       bat = "BAT0";
       interval = 10;
-      format-icons = [ "" "" "" "" "" "" "" "" "" "" ];
+      format-icons = ["" "" "" "" "" "" "" "" "" ""];
       format = "{icon}";
       format-charging = "";
       onclick = "";

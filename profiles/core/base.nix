@@ -4,10 +4,10 @@
   lib,
   ...
 }: {
-  systemd.services.NetworkManager-wait-online.enable = false;
+  # systemd.services.NetworkManager-wait-online.enable = false;
   boot.cleanTmpDir = true;
 
-  services.dbus.packages = [ pkgs.gcr ];
+  services.dbus.packages = [pkgs.gcr];
 
   environment = {
     defaultPackages = with pkgs; [
@@ -40,10 +40,10 @@
     };
   };
 
-  networking = {
-    useDHCP = false;
-    networkmanager.enable = true;
-  };
+  # networking = {
+  #   useDHCP = false;
+  #   networkmanager.enable = true;
+  # };
 
   xdg.portal = {
     enable = true;
@@ -79,5 +79,6 @@
   };
 
   virtualisation.docker.enable = true;
+  services.xserver.libinput.enable = true;
   system.stateVersion = lib.mkDefault "22.11";
 }

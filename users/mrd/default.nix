@@ -12,7 +12,8 @@
     password = "mrd";
     description = "default";
     isNormalUser = true;
-    extraGroups = ["wheel"] 
-    ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
+    extraGroups =
+      ["wheel"]
+      ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
   };
 }
