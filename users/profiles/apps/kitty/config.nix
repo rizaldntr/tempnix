@@ -49,4 +49,7 @@ with colors.base; ''
   inactive_tab_background ${background}
   tab_bar_background ${backgroundLighter}
   tab_bar_margin_color ${blue}
+
+  modify_font underline_position +3
+  modify_font underline_thickness 130%
 ''

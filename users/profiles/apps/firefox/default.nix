@@ -6,18 +6,17 @@
   programs.firefox = {
     enable = true;
 
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      enhanced-github
-      enhancer-for-youtube
-      refined-github
-      browserpass
-    ];
-
     profiles.mrd = {
       id = 0;
       settings."general.smoothScroll" = true;
       userChrome = import ./userChrome-css.nix {inherit config;};
       userContent = import ./userContent-css.nix {inherit config;};
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        enhanced-github
+        enhancer-for-youtube
+        refined-github
+        browserpass
+      ];
       extraConfig = ''
         user_pref("browser.urlbar.autoFill", false);
         user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);

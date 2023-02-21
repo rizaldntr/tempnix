@@ -6,7 +6,7 @@
 }: {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = false;
+  services.xserver.displayManager.lightdm.enable = true;
 
   services.greetd = {
     enable = true;

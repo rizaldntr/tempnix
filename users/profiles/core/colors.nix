@@ -8,22 +8,23 @@
     magenta = "c296eb";
     cyan = "93cee9";
     white = "cbced3";
-    brightblack = "1c1e27";
-    brightred = "e26c7c";
-    brightgreen = "95d3af";
-    brightyellow = "f1d8a5";
-    brightblue = "8baff1";
-    brightmagenta = "c79bf0";
-    brightcyan = "98d3ee";
-    brightwhite = "d0d3d8";
+    brightBlack = "1c1e27";
+    brightRed = "e26c7c";
+    brightGreen = "95d3af";
+    brightYellow = "f1d8a5";
+    brightBlue = "8baff1";
+    brightMagenta = "c79bf0";
+    brightCyan = "98d3ee";
+    brightWhite = "d0d3d8";
 
     #additional
-    background = "14141e";
-    backgroundDarker = "12121c";
-    backgroundContrast = "161620";
-    backgroundLighter = "181822";
-    dimblack = "1d1d27";
-    foreground = "c3cddb";
+    grey = "2b2d36";
+    background = "0d0f18";
+    backgroundDarker = "0b0d16";
+    backgroundContrast = "0f111a";
+    backgroundLighter = "11131c";
+    dimblack = "11131c";
+    foreground = "a5b6cf";
   };
 
   colors.base = {
@@ -35,22 +36,23 @@
     magenta = "#c296eb";
     cyan = "#93cee9";
     white = "#cbced3";
-    brightblack = "#1c1e27";
-    brightred = "#e26c7c";
-    brightgreen = "#95d3af";
-    brightyellow = "#f1d8a5";
-    brightblue = "#8baff1";
-    brightmagenta = "#c79bf0";
-    brightcyan = "#98d3ee";
-    brightwhite = "#d0d3d8";
+    brightBlack = "#1c1e27";
+    brightRed = "#e26c7c";
+    brightGreen = "#95d3af";
+    brightYellow = "#f1d8a5";
+    brightBlue = "#8baff1";
+    brightMagenta = "#c79bf0";
+    brightCyan = "#98d3ee";
+    brightWhite = "#d0d3d8";
 
     #additional
-    background = "#151720";
-    backgroundDarker = "#12121c";
-    backgroundContrast = "#161620";
-    backgroundLighter = "#181822";
-    dimblack = "#1d1d27";
-    foreground = "#c3cddb";
+    grey = "#2b2d36";
+    background = "#0d0f18";
+    backgroundDarker = "#0b0d16";
+    backgroundContrast = "#0f111a";
+    backgroundLighter = "#11131c";
+    dimblack = "#11131c";
+    foreground = "#a5b6cf";
   };
 
   colors.base16Hex = {

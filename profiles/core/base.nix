@@ -18,13 +18,15 @@
       zip
       docker-compose
       alejandra
+      sumneko-lua-language-server
     ];
 
     shellAliases = let
       ifSudo = lib.mkIf config.security.sudo.enable;
     in {
       # nix
-      nrb = ifSudo "sudo nixos-rebuild";
+      nrb = ifSudo "sudo nixos-rebuild switch --flake '.#gada'";
+      nrt = ifSudo "sudo nixos-rebuild test --flake '.#gada'";
       nso = ifSudo "sudo nix-store --optimise";
       ncgd = ifSudo "sudo nix-collect-garbage -d";
 
@@ -40,10 +42,10 @@
     };
   };
 
-  # networking = {
-  #   useDHCP = false;
-  #   networkmanager.enable = true;
-  # };
+  networking = {
+    useDHCP = false;
+    networkmanager.enable = true;
+  };
 
   xdg.portal = {
     enable = true;

@@ -28,6 +28,7 @@
         esbenp.prettier-vscode
         ms-python.python
         ms-python.vscode-pylance
+        sumneko.lua
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {

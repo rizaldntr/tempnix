@@ -9,6 +9,8 @@ channels: final: prev: {
     deploy-rs
     hyprland
     vscode
+    home
+    kitty
     ;
 
   haskellPackages =

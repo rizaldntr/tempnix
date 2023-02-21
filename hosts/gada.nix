@@ -16,7 +16,7 @@
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot.extraModulePackages = with config.boot.kernelPackages; [rtl88x2bu];
 
   time.timeZone = config.vars.timezone;
 
@@ -40,10 +40,6 @@
     LC_TELEPHONE = "id_ID.UTF-8";
     LC_TIME = "id_ID.UTF-8";
   };
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "${config.vars.username}";
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";

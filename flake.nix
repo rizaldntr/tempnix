@@ -14,7 +14,7 @@
   };
 
   inputs = {
-    nixos.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixos.url = "github:nixos/nixpkgs";
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
 
     digga.url = "github:divnix/digga";
@@ -22,7 +22,7 @@
     digga.inputs.nixlib.follows = "nixos";
     digga.inputs.home-manager.follows = "home";
 
-    home.url = "github:nix-community/home-manager/release-22.11";
+    home.url = "github:nix-community/home-manager";
     home.inputs.nixpkgs.follows = "nixos";
 
     agenix.url = "github:ryantm/agenix";
