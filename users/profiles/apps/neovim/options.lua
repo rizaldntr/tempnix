@@ -11,6 +11,10 @@ vim_opts({
   opt = {
     termguicolors = true,
     fillchars = { eob = " " },
+    showmode = false,
+    laststatus = 3,
+    cmdheight = 0,
+    showtabline = 2,
   },
 })
 

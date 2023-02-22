@@ -1,5 +1,5 @@
 require("neo-tree").setup({
-  close_if_last_window = false,
+  close_if_last_window = true,
   popup_border_style = "rounded",
   enable_git_status = true,
   enable_diagnostics = true,
@@ -49,8 +49,21 @@ require("neo-tree").setup({
     },
   },
   window = {
-    position = "left",
     width = 30,
+    mappings = {
+      o = "open",
+      H = "prev_source",
+      L = "next_source",
+    },
+  },
+  filesystem = {
+    -- follow_current_file = true,
+    hijack_netrw_behavior = "open_current",
+    use_libuv_file_watcher = true,
+    window = { mappings = { h = "toggle_hidden" } },
+  },
+  event_handlers = {
+    { event = "neo_tree_buffer_enter", handler = function(_) vim.opt_local.signcolumn = "auto" end },
   },
 })
 

@@ -130,7 +130,7 @@ local highlights = {
   Ignore = { fg = colors.white, bg = colors.background },
   Todo = { fg = colors.red, bg = colors.background },
   Error = { fg = colors.red, bg = colors.background },
-  TabLine = { fg = colors.green, bg = colors.contrast },
+  TabLine = { fg = colors.green, bg = colors.backgroundDarker },
   TabLineSel = { fg = colors.foreground, bg = colors.background },
   TabLineFill = { fg = colors.foreground, bg = colors.background },
   
@@ -273,6 +273,11 @@ local highlights = {
 
   -- yaml
   ["@field.yaml"] = { fg = colors.blue }, -- For fields.
+  
+  -- Gitsigns
+  GitSignsAdd = { fg = colors.green },
+  GitSignsChange = { fg = colors.yellow },
+  GitSignsDelete = { fg = colors.red },
 }
 
 for group, spec in pairs(highlights) do

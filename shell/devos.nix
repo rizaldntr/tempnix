@@ -10,6 +10,7 @@ in {
     (nixfiles agenix)
     (nixfiles cachix)
     (nixfiles home-manager)
+    (nixfiles nvfetcher)
     (nixfiles inputs.nixos-generators.defaultPackage.${pkgs.system})
   ];
 }

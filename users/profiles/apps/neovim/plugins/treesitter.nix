@@ -6,6 +6,7 @@
         p.lua
         p.nix
         p.sql
+        p.yaml
       ]);
       type = "lua";
       config = builtins.readFile ../configs/treesitter.lua;

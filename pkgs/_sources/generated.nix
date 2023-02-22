@@ -3,6 +3,7 @@
   fetchgit,
   fetchurl,
   fetchFromGitHub,
+  dockerTools,
 }: {
   decay-gtk = {
     pname = "decay-gtk";
@@ -15,6 +16,20 @@
       leaveDotGit = false;
       sha256 = "sha256-i6crTKc0NcS/u9edjZjFJItxcxvW5BMK0cvPuBvP/Aw=";
     };
+    date = "2022-10-25";
+  };
+  heirline-nvim = {
+    pname = "heirline-nvim";
+    version = "b69415d912d466db17b8ee1eb777cc7f776a9286";
+    src = fetchgit {
+      url = "https://github.com/rebelot/heirline.nvim";
+      rev = "b69415d912d466db17b8ee1eb777cc7f776a9286";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-2rx2QWDJN8TAtCnwmh2izniQJPHx0uE7KpfzISIQY18=";
+    };
+    date = "2023-02-19";
   };
   manix = {
     pname = "manix";

@@ -1,6 +1,7 @@
 {
     "decay-gtk": {
         "cargoLocks": null,
+        "date": "2022-10-25",
         "extract": null,
         "name": "decay-gtk",
         "passthru": null,
@@ -17,8 +18,28 @@
         },
         "version": "19a60e6f83f5c8193ce3b44f693d8cd8d17eef53"
     },
+    "heirline-nvim": {
+        "cargoLocks": null,
+        "date": "2023-02-19",
+        "extract": null,
+        "name": "heirline-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "b69415d912d466db17b8ee1eb777cc7f776a9286",
+            "sha256": "sha256-2rx2QWDJN8TAtCnwmh2izniQJPHx0uE7KpfzISIQY18=",
+            "type": "git",
+            "url": "https://github.com/rebelot/heirline.nvim"
+        },
+        "version": "b69415d912d466db17b8ee1eb777cc7f776a9286"
+    },
     "manix": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "manix",
         "passthru": null,

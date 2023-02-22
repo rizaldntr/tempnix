@@ -6,3 +6,7 @@ fetch.github = "mlvzk/manix"
 [decay-gtk]
 src.git   = "https://github.com/decaycs/decay-gtk"
 fetch.git = "https://github.com/decaycs/decay-gtk"
+
+[heirline-nvim]
+src.git   = "https://github.com/rebelot/heirline.nvim"
+fetch.git = "https://github.com/rebelot/heirline.nvim"
