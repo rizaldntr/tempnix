@@ -56,5 +56,24 @@
             "type": "github"
         },
         "version": "v0.6.3"
+    },
+    "smart-splits-nvim": {
+        "cargoLocks": null,
+        "date": "2023-02-13",
+        "extract": null,
+        "name": "smart-splits-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "b38431f1f68bc43d6bf9d1edb21c2bcb06b1197c",
+            "sha256": "sha256-UKYfJzmvYIB7MQlTH2dhbTeOIfI0TxY7EfqyLsx6mps=",
+            "type": "git",
+            "url": "https://github.com/mrjones2014/smart-splits.nvim"
+        },
+        "version": "b38431f1f68bc43d6bf9d1edb21c2bcb06b1197c"
     }
 }

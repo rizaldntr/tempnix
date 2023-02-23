@@ -15,6 +15,12 @@ vim_opts({
     laststatus = 3,
     cmdheight = 0,
     showtabline = 2,
+    updatetime = 300,
   },
+  g = {
+    mapleader = " ",
+    cmp_enabled = true,
+    lsp_handlers_enabled = true,
+  }
 })
 

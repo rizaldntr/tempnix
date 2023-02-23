@@ -42,4 +42,17 @@
       sha256 = "sha256-GqPuYscLhkR5E2HnSFV4R48hCWvtM3C++3zlJhiK/aw=";
     };
   };
+  smart-splits-nvim = {
+    pname = "smart-splits-nvim";
+    version = "b38431f1f68bc43d6bf9d1edb21c2bcb06b1197c";
+    src = fetchgit {
+      url = "https://github.com/mrjones2014/smart-splits.nvim";
+      rev = "b38431f1f68bc43d6bf9d1edb21c2bcb06b1197c";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-UKYfJzmvYIB7MQlTH2dhbTeOIfI0TxY7EfqyLsx6mps=";
+    };
+    date = "2023-02-13";
+  };
 }

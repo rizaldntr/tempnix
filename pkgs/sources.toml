@@ -10,3 +10,7 @@ fetch.git = "https://github.com/decaycs/decay-gtk"
 [heirline-nvim]
 src.git   = "https://github.com/rebelot/heirline.nvim"
 fetch.git = "https://github.com/rebelot/heirline.nvim"
+
+[smart-splits-nvim]
+src.git   = "https://github.com/mrjones2014/smart-splits.nvim"
+fetch.git = "https://github.com/mrjones2014/smart-splits.nvim"

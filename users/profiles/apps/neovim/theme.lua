@@ -133,6 +133,18 @@ local highlights = {
   TabLine = { fg = colors.green, bg = colors.backgroundDarker },
   TabLineSel = { fg = colors.foreground, bg = colors.background },
   TabLineFill = { fg = colors.foreground, bg = colors.background },
+
+  -- Diagnostics support
+  DiagnosticError = { fg = colors.red }, -- red
+  DiagnosticWarn = { fg = colors.yellow }, -- yellow
+  DiagnosticInfo = { fg = colors.blue }, -- blue
+  DiagnosticHint = { fg = colors.cyan }, -- cyan
+
+  -- Underline
+  DiagnosticUnderlineError = { undercurl = true, sp = colors.red }, -- red
+  DiagnosticUnderlineWarn = { undercurl = true, sp = colors.yellow }, -- yellow
+  DiagnosticUnderlineInfo = { undercurl = true, sp = colors.blue }, -- blue
+  DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan }, -- cyan
   
   -- NeoTree 
   NeoTreeTabActive = { sp = colors.blue, underline = true },
@@ -278,6 +290,11 @@ local highlights = {
   GitSignsAdd = { fg = colors.green },
   GitSignsChange = { fg = colors.yellow },
   GitSignsDelete = { fg = colors.red },
+
+  -- Telescope
+  TelescopeBorder = { fg = colors.black, bg = colors.background },
+  TelescopeNormal = { fg = colors.foreground, bg = colors.background },
+  TelescopeSelection = { fg = colors.background, bg = colors.green },
 }
 
 for group, spec in pairs(highlights) do

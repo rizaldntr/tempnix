@@ -3,6 +3,7 @@
     "vim",
     "icon",
     "colors",
-    "opts"
+    "opts",
+    "lspkindopts"
   ]
 }
