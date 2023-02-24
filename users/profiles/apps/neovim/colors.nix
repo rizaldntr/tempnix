@@ -24,7 +24,7 @@ with colors.base; ''
     dimblack = "${dimblack}",
     foreground = "${foreground}",
 
-    statusline_bg = "${backgroundContrast}",
+    statusline_bg = "#0f111a",
     cursorline = "${backgroundLighter}",
     comments = "${grey}",
     cursor = "${foreground}",
