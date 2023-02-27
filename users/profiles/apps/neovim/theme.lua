@@ -168,9 +168,9 @@ local highlights = {
 
   -- IndentBlank
   IndentBlanklineSpaceChar = { fg = colors.backgroundLighter, nocombine = true },
-  IndentBlanklineChar = { fg = colors.backgroundContrast, nocombine = true },
-  IndentBlanklineContextStart = { fg = colors.foreground, underline = true },
-  IndentBlanklineContextChar = { fg = "#242931", nocombine = true },
+  IndentBlanklineChar = { fg = colors.black, nocombine = true },
+  IndentBlanklineContextStart = { fg = colors.comments, underline = true, bg='NONE' },
+  IndentBlanklineContextChar = { fg = colors.comments, bg='NONE', nocombine = true },
   IndentBlanklineSpaceCharBlankline = { fg = colors.backgroundLighter, nocombine = true },
 
   -- Treesitter

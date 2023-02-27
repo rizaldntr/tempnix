@@ -86,3 +86,8 @@ require('lspconfig')['pyright'].setup{
   on_attach = lsp_on_attach,
 }
 
+require('lspconfig')['nil_ls'].setup{
+  on_attach = lsp_on_attach,
+}
+
+

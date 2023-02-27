@@ -19,6 +19,7 @@
       docker-compose
       alejandra
       sumneko-lua-language-server
+      nil
     ];
 
     shellAliases = let
