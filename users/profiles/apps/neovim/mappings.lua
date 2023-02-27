@@ -102,6 +102,46 @@ maps.n["[d"] = { function() vim.diagnostic.goto_prev() end, desc = "Previous dia
 maps.n["]d"] = { function() vim.diagnostic.goto_next() end, desc = "Next diagnostic" }
 maps.n["gl"] = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" }
 
+-- DAP
+maps.n["<F5>"] = { function() require("dap").continue() end, desc = "Debugger: Start" }
+maps.n["<F17>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" } -- Shift+F5
+maps.n["<F29>"] = { function() require("dap").restart_frame() end, desc = "Debugger: Restart" } -- Control+F5
+maps.n["<F6>"] = { function() require("dap").pause() end, desc = "Debugger: Pause" }
+maps.n["<F9>"] = { function() require("dap").toggle_breakpoint() end, desc = "Debugger: Toggle Breakpoint" }
+maps.n["<F10>"] = { function() require("dap").step_over() end, desc = "Debugger: Step Over" }
+maps.n["<F11>"] = { function() require("dap").step_into() end, desc = "Debugger: Step Into" }
+maps.n["<F23>"] = { function() require("dap").step_out() end, desc = "Debugger: Step Out" } -- Shift+F11
+maps.n["<leader>Db"] = { function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint (F9)" }
+maps.n["<leader>DB"] = { function() require("dap").clear_breakpoints() end, desc = "Clear Breakpoints" }
+maps.n["<leader>Dc"] = { function() require("dap").continue() end, desc = "Start/Continue (F5)" }
+maps.n["<leader>Di"] = { function() require("dap").step_into() end, desc = "Step Into (F11)" }
+maps.n["<leader>Do"] = { function() require("dap").step_over() end, desc = "Step Over (F10)" }
+maps.n["<leader>DO"] = { function() require("dap").step_out() end, desc = "Step Out (S-F11)" }
+maps.n["<leader>Dq"] = { function() require("dap").close() end, desc = "Close Session" }
+maps.n["<leader>DQ"] = { function() require("dap").terminate() end, desc = "Terminate Session (S-F5)" }
+maps.n["<leader>Dp"] = { function() require("dap").pause() end, desc = "Pause (F6)" }
+maps.n["<leader>Dr"] = { function() require("dap").restart_frame() end, desc = "Restart (C-F5)" }
+maps.n["<leader>DR"] = { function() require("dap").repl.toggle() end, desc = "Toggle REPL" }
+maps.n["<leader>Du"] = { function() require("dapui").toggle() end, desc = "Toggle Debugger UI" }
+maps.n["<leader>Dh"] = { function() require("dap.ui.widgets").hover() end, desc = "Debugger Hover" }
+
+--- Change the number display modes
+local function change_number()
+  local number = vim.wo.number -- local to window
+  local relativenumber = vim.wo.relativenumber -- local to window
+  if not number and not relativenumber then
+    vim.wo.number = true
+  elseif number and not relativenumber then
+    vim.wo.relativenumber = true
+  elseif number and relativenumber then
+    vim.wo.number = false
+  else -- not number and relativenumber
+    vim.wo.relativenumber = false
+  end
+end
+
+maps.n["<leader>un"] = { function() change_number() end, desc = "Change line numbering" }
+
 local function set_mappings(map_table, base)
   for mode, maps in pairs(map_table) do
     for keymap, options in pairs(maps) do

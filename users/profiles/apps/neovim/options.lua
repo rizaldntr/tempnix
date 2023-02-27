@@ -16,6 +16,7 @@ vim_opts({
     cmdheight = 0,
     showtabline = 2,
     updatetime = 300,
+    number = true,
   },
   g = {
     mapleader = " ",

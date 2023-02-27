@@ -13,6 +13,7 @@
     ./smart-splits.nix
     ./toggleterm.nix
     ./lsp.nix
+    ./dap.nix
   ];
 
   programs.neovim.plugins = with pkgs.vimPlugins; [

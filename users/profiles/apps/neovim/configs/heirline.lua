@@ -164,11 +164,11 @@ local ScrollBar ={
 
 local FileType = {
   condition = function(self)
-    local filename = vim.api.nvim_buf_get_name(0)
+    local filename = vim.api.nvim_buf_get_name(self.bufnr or 0)
     return filename ~= "" and filename ~= "neo-tree"
   end,
   init = function(self)
-    self.filename = vim.api.nvim_buf_get_name(0)
+    self.filename = vim.api.nvim_buf_get_name(self.bufnr or 0)
     self.extension = vim.fn.fnamemodify(self.filename, ":e")
     self.filetype = vim.bo[self and self.bufnr or 0].filetype
     self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(self.filename, self.extension, { default = true })
@@ -320,6 +320,8 @@ local StatusLines = {
   Space,
   Space,
   FileType,
+  Space,
+  Space,
   GitDiff,
   Space,
   Space,
@@ -422,10 +424,9 @@ local TablineCloseButton = {
   },
 }
 
-
 local FileIcon = {
   init = function(self)
-      local filename = vim.api.nvim_buf_get_name(0)
+      local filename = vim.api.nvim_buf_get_name(self.bufnr)
       local extension = vim.fn.fnamemodify(filename, ":e")
       self.icon, self.icon_color = require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
   end,

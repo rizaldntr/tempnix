@@ -3,6 +3,6 @@
     python39
     python39Packages.pip
     python39Packages.black
-    python39Packages.debugpy
+    python39Packages.virtualenv
   ];
 }
